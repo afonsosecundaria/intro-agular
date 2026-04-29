@@ -1,4 +1,4 @@
-<h1> turma {{nometurma}} - {{anoturma}}</h1>
+<app-titulo-principal></app-titulo-principal>
 
 <h2>Disciplinas</h2>
 
@@ -6,5 +6,15 @@
   <tr>
     <th>Nome</th>
     <th>Docente</th>
+    <th>Carga Horária</th>
   </tr>
+
+  @for(disc of disciplinas; track disc.nome){
+    <!-- <tr *ngFor="let disc of disciplinas"> -->
+    <tr>
+      <td>{{disc.nome}}</td>
+      <td>{{disc.docente}}</td>
+      <td>{{disc.ch}}</td>
+    </tr>
+  }
 </table>

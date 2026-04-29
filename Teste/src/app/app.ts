@@ -1,16 +1,18 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NgFor } from '@angular/common';
+import { TituloPrincipal } from './titulo-principal/titulo-principal';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [TituloPrincipal, NgFor],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
+
 export class App {
-  protected readonly nometurma = 'Infor4v'
+  protected readonly nometurma = 'Info4v'
   protected readonly anoturma = '2023'
-  protected readonly disciplinas any[] = []
+  protected readonly disciplinas: any[] = []
 
   constructor(){
     this.disciplinas = [
@@ -20,7 +22,9 @@ export class App {
         ch: 120
       },
       {
-        
+        nome: 'eng. software', 
+        docente: 'Alvaro', 
+        ch: 120  
       }
     ]
   }
