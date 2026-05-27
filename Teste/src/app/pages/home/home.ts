@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Calculamedia } from '../../components/calculamedia/calculamedia';
 import { ExibeMensagem } from '../../components/exibe-mensagem/exibe-mensagem';
 
 interface Disciplina {
@@ -11,7 +12,7 @@ interface Disciplina {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ExibeMensagem],
+  imports: [ExibeMensagem, Calculamedia],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

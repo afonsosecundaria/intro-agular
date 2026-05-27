@@ -1,6 +1,6 @@
 <div class="container">
 
-    <h1>Dashboard</h1>
+    <h1 class="text-center">Dashboard</h1>
   
     <h2>Disciplinas</h2>
   
@@ -19,6 +19,37 @@
         </tr>
       }
     </table>
+    <form class="container">
+      <h2 class="text-center">Calcule a Média da Suas disciplinas</h2>
+      <div>
+        <label class="form-label">Bimestre 1</label>
+        <input type="number" class="form-control">
+      </div>
+      <div>
+        <label class="form-label">Bimestre 2</label>
+        <input type="number" class="form-control">
+      </div>
+      <div>
+        <label class="form-label">Bimestre 3</label>
+        <input type="number" class="form-control" id="b3" #b3>
+      </div>
+      <div>
+        <label class="form-label">Bimestre 4</label>
+        <input type="number" class="form-control">
+      </div>
+      <input type="button" class="bnt bnt-primary d-block mx-auto" value="Calcular">
+      @if (mediaparcial){
+        <div class="resultado">
+          @if(mediaparcial >= 60){
+            <p class="alert alert-sucess">Aprovado com Media parcial: {{mediaparcial}}</p>
+          }@else if(mediaparcial >= 10){
+            <p class="alert alert-warning">Insetir form para obter a nota da avaliação final</p>
+          }@else{
+            <p class="alert alert-warning">Reprovado com media final {{mediaparcial}}</p>
+          }
+        </div>
+      }
+    </form>
   
 </div>
 <app-exibe-mensagem></app-exibe-mensagem>
